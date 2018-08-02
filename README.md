@@ -2,7 +2,9 @@
 An HTML page that loads JPEGs with the same base name as the document
 
 ## The problem
-Unlike a lot of digital designers I donʻt use Sketch to design sites – I use Adobe InDesign. There are a few reasons for this. In order to get a real feel for the scale of the type, image, layout and how each page relates to each other I use InVision.
+Unlike a lot of digital designers I donʻt use Sketch to design sites – I use Adobe InDesign. There are a few reasons for this. 
+
+In order to get a real feel for the scale of the type, image, layout and how each page relates to each other I use InVision.
 
 But for me, there is a stage before this that I want to quickly look at what these things look like. <!-- For me InVision is for close to first draft.--> I will output a JPEG and load it into the browser. This doesn't quite work though. Sometimes the browser will scale that image and if I have a number of pages I have will have to load each. This is annoying.
 

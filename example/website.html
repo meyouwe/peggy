@@ -1,0 +1,69 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Browser proofing</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var file_name = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+                document.proof_img.src= file_name.split('.')[0] + '.jpg';
+
+                var click_count = 1;
+
+                function cl (click_count){
+                    if (click_count == 1) {
+                        document.proof_img.src= file_name.split('.')[0] + '.jpg';
+                    }
+                    else {
+                        document.proof_img.src= file_name.split('.')[0] + click_count + '.jpg';
+                    }
+                }
+
+                $('#left_side').click(function(){
+                    if (click_count != 1) {
+                        click_count -= 1;
+                        cl(click_count);
+                    }
+                });
+
+                $('#right_side').click(function(){
+                    click_count += 1;
+                    cl(click_count);
+                });
+
+            });
+        </script>
+        <style type="text/css">
+            body {margin: 0;}
+            #left_side, #right_side {
+                width: 50%;
+                height: 1000px; 
+                background-color: transparent;
+                position: fixed;
+            }
+
+            #left_side {
+                left: 0;
+                top: 0;
+            }
+            #right_side {
+                right: 0;
+                top: 0;
+            }
+        </style>
+
+    </head>
+    <body id='body_click'>
+        <div id='left_side' accesskey=","></div>
+        <div id='right_side' accesskey="."></div>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <img src="" id='proof_image' name='proof_img' onError="alert('You have no images.');">
+    </body>
+</html>
